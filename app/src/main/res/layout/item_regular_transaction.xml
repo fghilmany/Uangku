@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_outline_delete_forever_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <com.fghilmany.uangku.ui.custom.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/gd_center"
+                app:layout_constraintEnd_toStartOf="@id/iv_delete"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="+ Rp2.000.000"
+                android:textAlignment="textEnd"
+                android:layout_marginEnd="8dp"
+                style="@style/PrimaryNormalText"
+                android:id="@+id/tv_amount"/>
+
+            <com.fghilmany.uangku.ui.custom.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/PrimaryNormalText"
+                android:id="@+id/tv_name"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/gd_center"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/full_names"/>
+
+            <com.fghilmany.uangku.ui.custom.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/PrimaryNormalText"
+                android:id="@+id/tv_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/gd_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                tools:text="@tools:sample/full_names"/>
+
+            <com.fghilmany.uangku.ui.custom.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/SecondaryNormalText"
+                android:id="@+id/tv_auto_input"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/gd_center"
+                app:layout_constraintTop_toBottomOf="@id/tv_type"
+                tools:text="@tools:sample/full_names"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

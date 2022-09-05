@@ -4,16 +4,15 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.fghilmany.uangku.core.data.local.entity.EmailEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface Dao {
-    //example query
+    /*//example query
     @Query("SELECT * FROM table_name")
     fun getEmail(): Flow<List<EmailEntity>>
 
     //example insert
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEmail(emailEntity: List<EmailEntity>)
+    suspend fun insertEmail(emailEntity: List<EmailEntity>)*/
 }

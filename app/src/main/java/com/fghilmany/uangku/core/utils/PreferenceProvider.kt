@@ -54,11 +54,11 @@ class PreferenceProvider(context: Context) {
     }
 
     //example save data
-    fun setEmail(email: String?){
-        setString(EMAIL_SP_KEY, email)
+    fun setFirstOpen(isFirst: Boolean?){
+        setBoolean(IS_FIRST_OPEN_KEY, isFirst?:false)
     }
 
     //example load data
-    fun getEmail() = pref.getString(EMAIL_SP_KEY, null)
+    fun isFirstOpen() = pref.getBoolean(IS_FIRST_OPEN_KEY, true)
 
 }

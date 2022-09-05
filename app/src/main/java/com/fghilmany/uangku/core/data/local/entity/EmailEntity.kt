@@ -6,6 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.fghilmany.uangku.core.utils.TABLE_NAME
 
+/*
 @Entity(tableName = "table_name")
 data class EmailEntity(
     @PrimaryKey
@@ -15,4 +16,4 @@ data class EmailEntity(
 
     @ColumnInfo(name = "name")
     var name: String = ""
-)
+)*/

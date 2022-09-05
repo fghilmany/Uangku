@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.splash.onboarding.OnBoardingIncomeFragment"
+    android:padding="16dp">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_have_regular_expense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/do_you_have_regular_expense"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_expense_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/input_the_name_of_your_regular_expenses"
+        app:layout_constraintTop_toBottomOf="@+id/cb_have_regular_expense"
+        app:helperText="@string/helper_regular_expense"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.fghilmany.uangku.ui.custom.CustomTextInputEditText
+            android:id="@+id/et_regular_expense_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_expense"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/input_your_regular_expenses"
+        app:layout_constraintTop_toBottomOf="@+id/til_expense_name"
+        app:prefixText="Rp"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginTop="8dp">
+
+        <com.fghilmany.uangku.ui.custom.CustomTextInputEditText
+            android:id="@+id/et_regular_expense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cb_auto_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/auto_input"
+        app:layout_constraintTop_toBottomOf="@+id/til_expense"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/group_regular_expense"
+        app:constraint_referenced_ids="til_expense_name, til_expense, cb_auto_input"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_choose_day"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/choose_day"
+        app:prefixText="@string/date_day"
+        app:layout_constraintEnd_toStartOf="@id/label_choose_day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_auto_input">
+
+        <com.fghilmany.uangku.ui.custom.CustomTextInputEditText
+            android:id="@+id/et_choose_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.fghilmany.uangku.ui.custom.CustomTextView
+        android:id="@+id/label_choose_day"
+        style="@style/PrimaryNormalText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/every_month"
+        app:layout_constraintHorizontal_weight="6"
+        app:layout_constraintBottom_toBottomOf="@+id/til_choose_day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/til_choose_day"
+        app:layout_constraintTop_toTopOf="@+id/til_choose_day" />
+
+
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/group_choose_date"
+        app:constraint_referenced_ids="til_choose_day, label_choose_day"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <com.fghilmany.uangku.ui.custom.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/you_can_fill_this_in_another_time"
+        style="@style/SecondaryNormalText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_choose_day" />
+
+    <com.fghilmany.uangku.ui.custom.CustomFloatingActionButton
+        android:id="@+id/fab_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_navigate_next_24"
+        android:rotation="180"
+        app:fabSize="normal"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <com.fghilmany.uangku.ui.custom.CustomFloatingActionButtonExtended
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:text="@string/finish"
+        android:layout_marginBottom="8dp"
+        app:icon="@drawable/ic_baseline_check_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

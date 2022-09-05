@@ -1,7 +1,7 @@
 package com.fghilmany.uangku.core.data
 
 import com.fghilmany.uangku.core.data.local.LocalDatasource
-import com.fghilmany.uangku.core.data.local.entity.EmailEntity
+//import com.fghilmany.uangku.core.data.local.entity.EmailEntity
 import com.fghilmany.uangku.core.data.remote.RemoteDatasource
 import com.fghilmany.uangku.core.data.remote.network.ApiResponse
 import com.fghilmany.uangku.core.data.remote.response.EmailResponse
@@ -26,7 +26,7 @@ class DataRepository (
             }
         }.asFlow()
     }
-
+/*
     // get online offline
     override fun getEmailOnlineOffline(email: String): Flow<Resource<List<EmailEntity>>> {
         return object : NetworkBoundResource<List<EmailEntity>, EmailResponse>(){
@@ -53,7 +53,7 @@ class DataRepository (
     // get offline
     override fun getEmailOffline(): Flow<List<EmailEntity>> {
         return localDatasource.getEmail()
-    }
+    }*/
 
 
 }

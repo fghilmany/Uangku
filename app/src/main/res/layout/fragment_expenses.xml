@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.home.list.expenses.ExpensesFragment"
+    android:padding="16dp">
+
+    <com.fghilmany.uangku.ui.custom.CustomTextView
+        android:id="@+id/label_your_balance"
+        style="@style/PrimaryNormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_balance"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_your_balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.fghilmany.uangku.ui.custom.CustomTextView
+        android:id="@+id/tv_your_balance"
+        style="@style/PrimaryNormalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/label_your_balance"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Rp.20.000.000" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_expense_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/input_the_name_of_your_expenses"
+        app:helperText="@string/helper_regular_expense"
+        app:layout_constraintTop_toBottomOf="@id/tv_your_balance"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.fghilmany.uangku.ui.custom.CustomTextInputEditText
+            android:id="@+id/et_regular_expense_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_expense"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/input_your_regular_expenses"
+        app:layout_constraintTop_toBottomOf="@+id/til_expense_name"
+        app:prefixText="Rp"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginTop="8dp">
+
+        <com.fghilmany.uangku.ui.custom.CustomTextInputEditText
+            android:id="@+id/et_regular_expense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_expense_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:singleSelection="true"
+        app:layout_constraintBottom_toTopOf="@+id/customMaterialButton"
+        app:layout_constraintTop_toBottomOf="@+id/til_expense"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <com.fghilmany.uangku.ui.custom.CustomMaterialButton
+        android:id="@+id/customMaterialButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_expense"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
